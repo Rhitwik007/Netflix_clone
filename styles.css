@@ -1,0 +1,399 @@
+ 
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+
+    overflow-x: hidden; /*removes the horizontal bar below*/
+}
+body{
+    background-color: black;
+    color:white;
+    font-family: "Poppins","sans-serif";
+    
+}
+.navbar{
+    position: absolute;
+    top:0;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2% 5%;
+    z-index: 10;
+    display: flex;
+}
+.navbar_brand{
+    width: 150px;
+    height: 100%;
+}
+.brand_logo{
+    width: 100%;
+    height: 100%;
+
+}
+.language_drop_down{
+    background: black;
+    border: none;
+    color:white;
+}
+.language_drop_down:focus{
+    outline: none;
+}
+.dropdown_container{
+    border: 1px solid white;
+    padding:0.4rem;
+    background: rgba(0,0,0,0.4) ;
+    padding: 10px 5px;
+
+}
+.signin_button{
+    background-color: #E50914;
+    border: 1px solid #E50914;
+    color: white;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+.navbar_nav_items{
+    display: flex;
+    gap:30px;
+}
+.hero_bg_image_container {
+    width: 100%;
+    height: 100vh; /*vh is also an attribute to measure*/
+    overflow-y: hidden;
+}
+.hero_bg_image {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+.hero_bg_overlay {
+    position: absolute;
+    inset:0;
+    width:100%;
+    height:100vh;
+    background: rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+}
+.hero_card {
+  position: absolute;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /*it helps to keep the container in middle*/
+}
+.hero_title {
+    font-weight: 600;
+    font-size: 3rem;
+}
+.hero_subtitle {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+.hero_description {
+    margin: 0 50px;
+    font-weight: 400;
+    font-size: 1rem;
+}
+.email_input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    padding-left: 7px;
+  }
+  .email_label {
+    color: black;
+    position: absolute;
+    top: 28%;
+    left: 2%;
+    color: rgb(153, 149, 149);
+    transition: 0.5s;
+  }
+  
+  .email_form_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+        gap: 1px;
+  }
+  .form_container {
+    background-color: white;
+    height: 50px;
+    position: relative;
+    width: 50%;
+  
+  }
+  .email_input:focus + .email_label {
+    top: 0.2rem;
+    font-size: 10px;
+  }
+  
+  .email_input:not(:placeholder-shown).email_input:not(:focus) + .email_label {
+    top: 0.2rem;
+    font-size: 10px;
+  }
+  
+  .email_input:focus-visible {
+    outline: none;
+  }
+  
+  .primary_button {
+    background-color: #E50914;
+    border: 1px solid #E50914;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 2px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    height: 50px;
+  
+  }
+  .feature {
+    border-top: 8px solid #222; /* the black border between evry features */
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center; /* items are at centre */
+    justify-content: space-between; /* space between 2 contents */
+    gap: 20px; /* gap between 2 features */
+  }
+  
+  .feature__details {
+    text-align: center;
+    text-align: left;
+    padding: 0 6rem;
+  }
+  
+  .feature__title { /* for the title of every feature */
+    font-weight: 600;
+    margin: 10px 0;
+    font-size: 50px;
+  
+  }
+  
+  .feature__sub__title {
+    font-weight: 400;
+    font-size: 25px;
+  
+  }
+  
+  .feature__image__container {
+    width: 100%;
+    position: relative;
+    max-width: 500px; /* max width of the image to be mantained so that it does not go out of the page */
+  }
+  .feature:nth-child(even) { /* as on even places the position of the text and the image is opposite */
+    flex-direction: row-reverse;
+  }
+  .feature__image {
+    width: 100%;
+  }
+  
+  .feature__backgroud__video__container {
+    position: absolute; /* under the image of feature image container so absolute & the above one is relative */
+    width: 100%;
+    top: 20%;
+    left: 13%;
+    height: 100%;
+    max-width: 73%;
+    max-height: 54%;
+    z-index: -2; /* to give it inside the image */
+  }
+  
+  .feature__backgroud__video {
+    width: 100%;
+  }
+  
+  .feature__2__poster__container {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%); /* to move the position of the image from it's actual position by 50% */
+    width: 100%;
+    max-width: 26em; /* 1em = 10-12 px */
+    display: flex;
+    align-items: center;
+    background-color: black;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+        height: 100px;
+        padding: 1rem;
+        gap: 15px;
+        overflow-y:hidden;
+  
+  }
+  
+  .poster__container {
+    width: 20%;
+    overflow-y: hidden;
+  
+  }
+  
+  .poster {
+    width: 100%;
+    height: 100%;
+  }
+  .poster__details {
+    width: 60%;
+  }
+  .poster__details > h4 { /* to do something with h4 of poster */
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .poster__details > h6 { /* to do something with h6 of poster */
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(63, 63, 246);
+  }
+  
+  .download__gif__container {
+    width: 20%;
+    height: 100%;
+    overflow-y:hidden;
+  }
+  .gif {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .feature__3__backgroud__video__container {
+    max-width: 63%;
+    max-height: 47%;
+    z-index: -2;
+    top: 9%;
+    left: 19%;
+  }
+  /*.FAQ_accordian {
+    width: 100%;
+  }
+  .FAQ_title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    font-size: 18px;
+    background-color:#303030;
+    border: 1px solid #303030;
+    color: white;
+  }
+  .FAQ_visible > {
+    background-color:#303030;
+    border-top: 1px solid black;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+  }
+  .FAQ_visible > p {
+    margin: 1rem;
+  }
+  .FAQ_list_container {
+    border-top: 8px solid #222;
+    padding: 2rem 0;
+  }
+  .FAQ_heading {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+    margin: 1rem 3rem;
+  }
+  .FAQ_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem 25rem;
+  }*/
+  .FAQ_accordian {
+    width: 100%;
+  }
+  .FAQ_title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    font-size: 18px;
+    background-color: #303030;
+    border: 1px solid #303030;
+    color: white;
+  }
+  
+  .FAQ_visible {
+    background-color: #303030;
+    border-top: 1px solid black;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+  }
+  
+  .FAQ_visible > p {
+    margin: 1rem;
+  }
+  .FAQ_list_container {
+    border-top: 8px solid #222;
+    padding: 2rem 0;
+  }
+  .FAQ_heading {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+    margin: 1rem 3rem;
+  }
+  
+  .FAQ_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding:1rem 25rem;
+  }
+  footer {
+    border-top: 8px solid #333; /*for the border above */
+    color: #757575;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 2rem 20rem;
+    justify-content: flex-start;
+    text-align: left;
+    align-items: flex-start;
+  }
+  .footer_row_2 {
+    display: flex;
+    font-size: 13px;
+    justify-content: space-around;
+    gap: 100px;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+  .footer_row_1 > h4 {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .footer_row_3 > .dropdown_container {
+    width: fit-content;
+    border: 1px solid #757575;
+    color: #757575;
+  }
+  .footer_row_3 > .dropdown_container > .language_drop_down {
+    color: #757575;
+  }
+  .footer_row_1, .footer_row_3, .footer_row_4 {
+    align-self: flex-start;
+  }
+  .hero_description {
+    text-align: center;
+    margin: 0 50px;
+    font-weight: 400;
+    font-size: 1rem;
+}
